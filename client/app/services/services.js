@@ -20,6 +20,7 @@ angular.module('shortly.services', [])
 
   // addlink method
   var addLink = function(link){
+    console.log('link from addlink', link);
     $http({
       method: 'POST',
       url: '/api/links',
