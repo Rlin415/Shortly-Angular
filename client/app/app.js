@@ -19,10 +19,14 @@ angular.module('shortly', [
     // when route is /links
     .when('/links', {
       // templateUrl: links.html
-      templateUrl: 'app/links/link.html',
+      templateUrl: 'app/links/links.html',
       // controller: controller
       controller: 'LinksController'
-      });
+    })
+    .when('/shorten', {
+      templateUrl: 'app/shorten/shorten.html',
+      controller: 'ShortenController'
+    });
     // We add our $httpInterceptor into the array
     // of interceptors. Think of it like middleware for your ajax calls
     $httpProvider.interceptors.push('AttachTokens');

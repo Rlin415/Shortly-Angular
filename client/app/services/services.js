@@ -1,8 +1,8 @@
 angular.module('shortly.services', [])
 
 .factory('Links', function ($http) {
-  var data = {
-  };
+  var data = {};
+  var link = {};
   //getLinks method for the scope
   var getLinks = function() {
     // http get request here
@@ -11,16 +11,29 @@ angular.module('shortly.services', [])
       method: 'GET',
       url: '/api/links',
     }).then(function(resp) {
+      // console.log('THIS IS THE URL', data.url);
       console.log('RESPONSE FROM GET REQUEST', resp);
       data.links = resp.data;
       return;
     });
   };
+
+  // addlink method
+  var addLink = function(){
+    $http({
+      method: 'POST',
+      url: '/api/links'
+      });
+  };
+
   return {
     data: data,
-    getLinks: getLinks
+    link: link,
+    getLinks: getLinks,
+    addLink: addLink
   };
 })
+
 .factory('Auth', function ($http, $location, $window) {
   // Don't touch this Auth service!!!
   // it is responsible for authenticating our user
