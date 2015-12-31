@@ -1,5 +1,7 @@
-angular.module('shortly.links', [])
+angular.module('shortly.links', ['shortly.services'])
 
 .controller('LinksController', function ($scope, Links) {
-  // Your code here
+  angular.extend($scope, Links);
+  // call the getLinks method here
+  $scope.getLinks();
 });
