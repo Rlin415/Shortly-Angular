@@ -1,5 +1,11 @@
 <div id='container'>
-  <div ng-repeat="(key, value) in data.links">
-    <h2>{{value}}<h2>
-  </div>
+  <ul>
+    <li class='link' ng-repeat="link in data.links | orderBy: '-visits' ">
+      <img class='image' src='/assets/redirect_icon.png'>
+      <div class='title'>{{link.title}}</div>
+      <div class='original'>{{link.url}}</div>
+      <div><a href="{{link.base_url}}/api/links/{{link.code}}">{{link.base_url}}/{{link.code}}</a></div>
+      <div class='visits'><span>{{ link.visits }}</span>Visits</div>
+    </li>
+  </ul>
 </div>

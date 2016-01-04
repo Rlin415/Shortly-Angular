@@ -12,6 +12,8 @@ module.exports = function (app) {
   app.route('/')
     .get(linksController.allLinks)
     .post(linksController.newLink);
+    // nav to links here. listen to put request (the restful way of doing it)
+
 
   app.get('/:code', linksController.navToLink);
 
