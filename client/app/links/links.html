@@ -1,6 +1,7 @@
 <div id='container'>
+  <input class='searchLinksBar' type='text' placeholder="Search links" ng-model='searchLinks'>
   <ul>
-    <li class='link' ng-repeat="link in data.links | orderBy: '-visits' ">
+    <li class='link' ng-repeat="link in data.links | filter: {title: searchLinks} | orderBy: '-visits' ">
       <img class='image' src='/assets/redirect_icon.png'>
       <div class='title'>{{link.title}}</div>
       <div class='original'>{{link.url}}</div>

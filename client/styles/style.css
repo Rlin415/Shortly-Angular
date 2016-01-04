@@ -153,3 +153,7 @@ input[type=url]:focus {
 .css-form input.ng-valid.ng-touched {
   background-color: #78FA89;
 }
+
+.searchLinksBar {
+  margin-left: 33%
+}
